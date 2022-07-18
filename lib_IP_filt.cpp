@@ -11,7 +11,7 @@ void sort_IP(IP_vv&& IP_address)
 {
 	std::sort(IP_address.begin(), IP_address.end(), [](IP_v l_IP,IP_v r_IP)
 	{
-		for (int i = 0; i < l_IP.size(); i++)
+		for (unsigned int i = 0; i < l_IP.size(); i++)
 		{
 			if (std::stoi(l_IP.at(i)) < std::stoi(r_IP.at(i))) return true;
 			if (std::stoi(l_IP.at(i)) > std::stoi(r_IP.at(i))) return false;
@@ -25,7 +25,7 @@ void r_sort_IP(IP_vv&& IP_address)
 {
 	std::sort(IP_address.begin(), IP_address.end(), [](IP_v l_IP, IP_v r_IP)
 	{
-		for (int i = 0; i < l_IP.size(); i++)
+		for (unsigned int i = 0; i < l_IP.size(); i++)
 		{
 			if (std::stoi(l_IP.at(i)) > std::stoi(r_IP.at(i))) return true;
 			if (std::stoi(l_IP.at(i)) < std::stoi(r_IP.at(i))) return false;
@@ -42,7 +42,7 @@ IP_vv IP_filter_sp(IP_vv & IP_address, IP_v Comparative_IP)
 	for (auto ip = IP_address.cbegin(); ip != IP_address.cend(); ++ip)
 	{
 
-		int i = 0;
+		unsigned int i = 0;
 		// Compare number bcs faster
 		while ((i < Comparative_IP.size()) && (std::stoi(ip->at(i)) == std::stoi(Comparative_IP.at(i))) )
 		{
@@ -52,7 +52,7 @@ IP_vv IP_filter_sp(IP_vv & IP_address, IP_v Comparative_IP)
 
 	}
 
-	return (std::move(temp));
+	return (temp);
 
 }
 
@@ -64,8 +64,8 @@ IP_vv IP_filter_any(IP_vv & IP_address, IP_v Comparative_IP)
 	for (auto ip = IP_address.cbegin(); ip != IP_address.cend(); ++ip)
 	{
 
-		int i = 0;
-		int j = 0;
+		unsigned int i = 0;
+		unsigned int j = 0;
 
 		while (i < ip->size() && (j < Comparative_IP.size()))
 		{
@@ -84,6 +84,6 @@ IP_vv IP_filter_any(IP_vv & IP_address, IP_v Comparative_IP)
 
 	}
 
-	return (std::move(temp));
+	return (temp);
 
 }
