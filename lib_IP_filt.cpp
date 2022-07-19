@@ -7,7 +7,7 @@ void Hello()
 }
 
 //Forward sort IP adress vector
-void sort_IP(IP_vv&& IP_address)
+void sort_IP(IP_vv& IP_address)
 {
 	std::sort(IP_address.begin(), IP_address.end(), [](IP_v l_IP,IP_v r_IP)
 	{
@@ -21,7 +21,7 @@ void sort_IP(IP_vv&& IP_address)
 }
 
 //Reverse sort IP adress vector
-void r_sort_IP(IP_vv&& IP_address)
+void r_sort_IP(IP_vv& IP_address)
 {
 	std::sort(IP_address.begin(), IP_address.end(), [](IP_v l_IP, IP_v r_IP)
 	{

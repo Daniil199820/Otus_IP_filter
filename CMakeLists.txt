@@ -11,13 +11,14 @@ add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/GTEST_LIN"
 "googletest")
 
 add_executable(ip_filter_cli main.cpp)
-add_library(lib_IP_filter lib_IP_filt.cpp)
+add_library(lib_IP_filter lib_IP_filt.cpp )
 add_executable(test_lib test_IP_filter.cpp)
 
 set_target_properties(ip_filter_cli lib_IP_filter test_lib PROPERTIES
     CXX_STANDARD 17
     CXX_STANDARD_REQUIRED ON
 )
+
 
 target_include_directories(
     test_lib PRIVATE
