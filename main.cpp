@@ -33,32 +33,9 @@ std::vector<std::string> split(const std::string &str, char d)
 	return r;
 }
 
-int main()
+void print_ip_pool(IP_vv& ip_array)
 {
-	std::setlocale(LC_ALL, "rus");
-	try
-	{
-		std::vector<std::vector<std::string> > ip_pool;
-
-		std::vector<std::string> first = { "1" };
-		std::vector<std::string> second = { "46","70" };
-		std::vector<std::string> third = { "46","70" };
-
-		for (std::string line; std::getline(std::cin, line);)
-		{
-			std::vector<std::string> v = split(line, '\t');
-			ip_pool.push_back(split(v.at(0), '.'));
-		}
-
-		// TODO reverse lexicographically sort
-
-
-		Hello();
-		r_sort_IP(ip_pool);
-		sort_IP(ip_pool);
-
-
-		for (auto ip = ip_pool.cbegin(); ip != ip_pool.cend(); ++ip)
+	for (auto ip = ip_array.cbegin(); ip != ip_array.cend(); ++ip)
 		{
 			for (auto ip_part = ip->cbegin(); ip_part != ip->cend(); ++ip_part)
 			{
@@ -70,6 +47,33 @@ int main()
 			}
 			std::cout << std::endl;
 		}
+}
+
+int main()
+{
+	std::setlocale(LC_ALL, "rus");
+	try
+	{
+		std::vector<std::vector<std::string> > ip_pool;
+
+		for (std::string line; std::getline(std::cin, line);)
+		{
+			std::vector<std::string> v = split(std::move(line), '\t');
+			ip_pool.push_back(split(v.at(0), '.'));
+		}
+
+		// TODO reverse lexicographically sort
+		r_sort_IP(ip_pool);
+		print_ip_pool(ip_pool);
+
+		IP_v first = { "1" };
+		print_ip_pool(IP_filter_sp(ip_pool,first));
+
+		IP_v second = { "46","70" };
+		print_ip_pool(IP_filter_sp(ip_pool,second));
+
+		IP_v third = {"46"};
+		print_ip_pool(IP_filter_any(ip_pool,third));
 
 		// 222.173.235.246
 		// 222.130.177.64
