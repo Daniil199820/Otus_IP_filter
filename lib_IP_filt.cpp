@@ -57,7 +57,7 @@ IP_vv IP_filter_sp(IP_vv & IP_address, IP_v Comparative_IP)
 }
 
 //Find matching any IP - order unimportant
-IP_vv IP_filter_any(IP_vv & IP_address, IP_v Comparative_IP)
+IP_vv  IP_filter_any(IP_vv & IP_address, IP_v Comparative_IP)
 {
 	IP_vv temp;
 

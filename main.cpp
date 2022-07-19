@@ -33,7 +33,7 @@ std::vector<std::string> split(const std::string &str, char d)
 	return r;
 }
 
-void print_ip_pool(IP_vv& ip_array)
+void print_ip_pool(IP_vv ip_array)
 {
 	for (auto ip = ip_array.cbegin(); ip != ip_array.cend(); ++ip)
 		{
