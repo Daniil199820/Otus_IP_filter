@@ -48,7 +48,7 @@ if (MSVC)
         /W4
     )
 else ()
-    target_compile_options(ip_filter_cli PRIVATE
+    target_compile_options(ip_filter PRIVATE
         -Wall -Wextra -pedantic -Werror
     )
     target_compile_options(lib_IP_filter PRIVATE
