@@ -62,3 +62,51 @@ TEST(LIB_WORK_TEST,r_sort_test){
      ASSERT_TRUE(compare_IP_polls(IP_poll_example,IP_poll_result));
       
 }
+
+TEST(LIB_WORK_TEST,function_filter_test){
+    //Generate examples
+    IP_vv IP_poll_example{
+        {"2","32","12","66"},
+        {"1","34","45","12"},
+        {"1","36","45","12"}
+    };
+    
+    
+    IP_vv temp_IP_pool = IP_filter_sp(IP_poll_example,{"1"});
+    //Generate result
+    IP_vv IP_poll_result{
+        {"1","34","45","12"},
+        {"1","36","45","12"}
+    }; 
+
+    //Create tests
+     ASSERT_EQ(temp_IP_pool.size(),IP_poll_result.size());
+     ASSERT_EQ(temp_IP_pool.at(0).size(),IP_poll_result.at(0).size());
+
+     ASSERT_TRUE(compare_IP_polls(temp_IP_pool,IP_poll_result));
+      
+}
+
+TEST(LIB_WORK_TEST,function_find_test){
+    //Generate examples
+    IP_vv IP_poll_example{
+        {"2","32","12","66"},
+        {"1","34","45","12"},
+        {"1","36","45","12"}
+    };
+
+    IP_vv temp_IP_pool = IP_filter_any(IP_poll_example,{"45"});
+
+    //Generate result
+    IP_vv IP_poll_result{
+        {"1","34","45","12"},
+        {"1","36","45","12"}
+    }; 
+
+    //Create tests
+     ASSERT_EQ(temp_IP_pool.size(),IP_poll_result.size());
+     ASSERT_EQ(temp_IP_pool.at(0).size(),IP_poll_result.at(0).size());
+
+     ASSERT_TRUE(compare_IP_polls(temp_IP_pool,IP_poll_result));
+      
+}

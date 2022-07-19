@@ -1,7 +1,7 @@
-D:/Otus_IP_filter/build/CMakeFiles/ip_filter_cli.dir
+D:/Otus_IP_filter/build/CMakeFiles/PACKAGE.dir
+D:/Otus_IP_filter/build/CMakeFiles/ip_filter.dir
 D:/Otus_IP_filter/build/CMakeFiles/lib_IP_filter.dir
 D:/Otus_IP_filter/build/CMakeFiles/test_lib.dir
-D:/Otus_IP_filter/build/CMakeFiles/PACKAGE.dir
 D:/Otus_IP_filter/build/CMakeFiles/INSTALL.dir
 D:/Otus_IP_filter/build/CMakeFiles/RUN_TESTS.dir
 D:/Otus_IP_filter/build/CMakeFiles/ALL_BUILD.dir

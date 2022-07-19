@@ -190,9 +190,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="D:\Otus_IP_filter\build\ip_filter_cli.vcxproj">
-      <Project>{F75A5F29-7CB5-35ED-B915-A120ABEA46AA}</Project>
-      <Name>ip_filter_cli</Name>
+    <ProjectReference Include="D:\Otus_IP_filter\build\ip_filter.vcxproj">
+      <Project>{021BFCE9-8CD1-3B0E-A306-6F6702B0525A}</Project>
+      <Name>ip_filter</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>

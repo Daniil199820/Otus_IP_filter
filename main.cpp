@@ -3,7 +3,6 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include<clocale>
 #include "lib_IP_filt.h"
 
 
@@ -51,7 +50,6 @@ void print_ip_pool(IP_vv ip_array)
 
 int main()
 {
-	std::setlocale(LC_ALL, "rus");
 	try
 	{
 		std::vector<std::vector<std::string> > ip_pool;
@@ -64,17 +62,8 @@ int main()
 
 		// TODO reverse lexicographically sort
 		r_sort_IP(ip_pool);
+
 		print_ip_pool(ip_pool);
-
-		IP_v first = { "1" };
-		print_ip_pool(IP_filter_sp(ip_pool,first));
-
-		IP_v second = { "46","70" };
-		print_ip_pool(IP_filter_sp(ip_pool,second));
-
-		IP_v third = {"46"};
-		print_ip_pool(IP_filter_any(ip_pool,third));
-
 		// 222.173.235.246
 		// 222.130.177.64
 		// 222.82.198.61
@@ -83,26 +72,20 @@ int main()
 		// 1.29.168.152
 		// 1.1.234.8
 
-		// TODO filter by first byte and output
-		// ip = filter(1)
-
+		print_ip_pool(IP_filter_sp(ip_pool,{"1"}));
 		// 1.231.69.33
 		// 1.87.203.225
 		// 1.70.44.170
 		// 1.29.168.152
 		// 1.1.234.8
 
-		// TODO filter by first and second bytes and output
-		// ip = filter(46, 70)
-
+		print_ip_pool(IP_filter_sp(ip_pool,{ "46","70" }));
 		// 46.70.225.39
 		// 46.70.147.26
 		// 46.70.113.73
 		// 46.70.29.76
 
-		// TODO filter by any byte and output
-		// ip = filter_any(46)
-
+		print_ip_pool(IP_filter_any(ip_pool,{"46"}));
 		// 186.204.34.46
 		// 186.46.222.194
 		// 185.46.87.231
@@ -137,6 +120,7 @@ int main()
 		// 46.49.43.85
 		// 39.46.86.85
 		// 5.189.203.46
+
 	}
 	catch (const std::exception &e)
 	{
